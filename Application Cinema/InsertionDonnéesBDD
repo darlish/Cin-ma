@@ -1,0 +1,212 @@
+
+Remplissage de la table Films :
+
+INSERT INTO Films (FilmID, Titre, Realisateur, Synopsis, PrixTicket, Salle, NotePresse, MoyenneNotesMembres, MoyenneNotesEmployes, Poster)
+VALUES 
+(1, 'Pauvre Créature', 'Yorgos Lanthinos', 'Bella est une jeune femme ramenée à la vie par le brillant et peu orthodoxe Dr Godwin Baxter. Sous sa protection, elle a soif d''apprendre. Avide de découvrir le monde dont elle ignore tout, elle s''enfuit avec Duncan Wedderburn, un avocat habile et débauché, et embarque pour une odyssée étourdissante à travers les continents. Durée: 2h21', 10.0, 'Salle 1', 0.0, 0.0, 0.0, 'poster1.jpg'),
+(2, 'Dune 2', 'Denis Villeneuve', 'Paul Atréides se rallie à Chani et aux Fremen tout en préparant sa revanche contre ceux qui ont détruit sa famille. Alors qu''il doit faire un choix entre l''amour de sa vie et le destin de la galaxie, il devra néanmoins tout faire pour empêcher un terrible futur que lui seul peut prédire. Durée: 2h46', 10.0, 'Salle 2', 0.0, 0.0, 0.0, 'poster2.jpg'),
+(3, 'La jeune fille et les paysans', 'Dorota Kobiela, Hugh Welchman', 'La plus belle fille d''un petit village polonais se voit contrainte d''épouser le fermier le plus influent, mais Jagna n''a pas dit adieu à sa liberté. La particularité du film est l''utilisation de la rotoscopie, toutes les scènes ont été filmées avec de vrais acteurs puis retranstcrites sous forme de peintures à l''huile avant d''etre animées. Durée: 1h54', 10.0, 'Salle 3', 0.0, 0.0, 0.0, 'poster3.jpg'),
+(4, 'Godzilla Minus One', 'Takashi Yamazaki', 'Le Japon se remet à peine de la Seconde Guerre mondiale, qu''un péril gigantesque émerge au large de Tokyo. Koichi, un déserteur traumatisé par sa première confrontation avec Godzilla, voit là l''occasion de racheter sa conduite pendant la guerre. Durée: 2h05', 10.0, 'Salle 4', 0.0, 0.0, 0.0, 'poster4.jpg'),
+(5, 'Monkey Man', 'Dev Patel', 'Un jeune homme gagne péniblement sa vie dans un club de combat clandestin où, nuit après nuit, portant un masque de gorille, il se fait battre par des combattants plus populaires pour de l''argent. Après des années de rage refoulée, il découvre un moyen d''infiltrer l''enclave de l''élite de la ville. Durée: 2hOO', 10.0, 'Salle 5', 0.0, 0.0, 0.0, 'poster5.jpg'),
+(6, 'Kung Fu Panda 4', 'Mike Mitchell', 'Après trois aventures dans lesquelles le guerrier dragon Po a combattu les maîtres du mal les plus redoutables grâce à un courage et des compétences en arts martiaux inégalés, le destin va de nouveau frapper à sa porte pour l''inviter à enfin se reposer. Plus précisément, pour être nommé chef spirituel de la vallée de la Paix. Durée: 1h34', 10.0, 'Salle 6', 0.0, 0.0, 0.0, 'poster6.jpg'),
+(7, 'Oppenheimer', 'Christopher Nolan', 'En 1942, convaincus que l''Allemagne nazie est en train de développer une arme nucléaire, les États-Unis initient, dans le plus grand secret, le Projet Manhattan destiné à mettre au point la première bombe atomique de l''histoire. Durée: 3h00', 10.0, 'Salle 7', 0.0, 0.0, 0.0, 'poster7.jpg'),
+(8, 'Guardians of the galaxy Vol.3', 'James Gunn', 'Les Gardiens de la Galaxie vont devoir combattre à nouveau Ayesha, la prêtresse des Souverains, faire face au créateur de Rocket qui veut le récupérer à tout prix et défier Adam Warlock prêt à tout pour les tuer. Durée: 2h29', 10.0, 'Salle 8', 0.0, 0.0, 0.0, 'poster8.jpg');
+
+
+Remplissage de la table Horaires :
+
+-- Pour le premier jour (Mardi 23 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(1, 1, '2024-04-23', '09:00:00'), -- Séance du matin
+(2, 1, '2024-04-23', '14:00:00'), -- Séance de l'après-midi
+(3, 1, '2024-04-23', '19:00:00'), -- Séance du soir
+
+(4, 2, '2024-04-23', '10:00:00'),
+(5, 2, '2024-04-23', '15:00:00'),
+(6, 2, '2024-04-23', '20:00:00');
+
+-- Pour le deuxième jour (Mercredi 24 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(7, 1, '2024-04-24', '09:00:00'),
+(8, 1, '2024-04-24', '14:00:00'),
+(9, 1, '2024-04-24', '19:00:00'),
+
+(10, 2, '2024-04-24', '10:00:00'),
+(11, 2, '2024-04-24', '15:00:00'),
+(12, 2, '2024-04-24', '20:00:00');
+
+-- Pour le troisième jour (Jeudi 25 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(13, 1, '2024-04-25', '09:00:00'),
+(14, 1, '2024-04-25', '14:00:00'),
+(15, 1, '2024-04-25', '19:00:00'),
+
+(16, 2, '2024-04-25', '10:00:00'),
+(17, 2, '2024-04-25', '15:00:00'),
+(18, 2, '2024-04-25', '20:00:00');
+
+-- Pour le premier jour (Mardi 23 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(19, 3, '2024-04-23', '09:00:00'), -- Séance du matin
+(20, 3, '2024-04-23', '14:00:00'), -- Séance de l'après-midi
+(21, 3, '2024-04-23', '19:00:00'), -- Séance du soir
+
+(22, 4, '2024-04-23', '10:00:00'),
+(23, 4, '2024-04-23', '15:00:00'),
+(24, 4, '2024-04-23', '20:00:00');
+
+-- Pour le deuxième jour (Mercredi 24 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(25, 3, '2024-04-24', '09:00:00'),
+(26, 3, '2024-04-24', '14:00:00'),
+(27, 3, '2024-04-24', '19:00:00'),
+
+(28, 4, '2024-04-24', '10:00:00'),
+(29, 4, '2024-04-24', '15:00:00'),
+(30, 4, '2024-04-24', '20:00:00');
+
+-- Pour le troisième jour (Jeudi 25 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(31, 3, '2024-04-25', '09:00:00'),
+(32, 3, '2024-04-25', '14:00:00'),
+(33, 3, '2024-04-25', '19:00:00'),
+
+(34, 4, '2024-04-25', '10:00:00'),
+(35, 4, '2024-04-25', '15:00:00'),
+(36, 4, '2024-04-25', '20:00:00');
+
+-- Pour le premier jour (Mardi 23 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(37, 5, '2024-04-23', '09:00:00'), -- Séance du matin
+(38, 5, '2024-04-23', '14:00:00'), -- Séance de l'après-midi
+(39, 5, '2024-04-23', '19:00:00'), -- Séance du soir
+
+(40, 6, '2024-04-23', '10:00:00'),
+(41, 6, '2024-04-23', '15:00:00'),
+(42, 6, '2024-04-23', '20:00:00');
+
+-- Pour le deuxième jour (Mercredi 24 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(43, 5, '2024-04-24', '09:00:00'),
+(44, 5, '2024-04-24', '14:00:00'),
+(45, 5, '2024-04-24', '19:00:00'),
+
+(46, 6, '2024-04-24', '10:00:00'),
+(47, 6, '2024-04-24', '15:00:00'),
+(48, 6, '2024-04-24', '20:00:00');
+
+-- Pour le troisième jour (Jeudi 25 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(49, 5, '2024-04-25', '09:00:00'),
+(50, 5, '2024-04-25', '14:00:00'),
+(51, 5, '2024-04-25', '19:00:00'),
+
+(52, 6, '2024-04-25', '10:00:00'),
+(53, 6, '2024-04-25', '15:00:00'),
+(54, 6, '2024-04-25', '20:00:00');
+
+-- Pour le premier jour (Mardi 23 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(55, 7, '2024-04-23', '09:00:00'), -- Séance du matin
+(56, 7, '2024-04-23', '14:00:00'), -- Séance de l'après-midi
+(57, 7, '2024-04-23', '19:00:00'), -- Séance du soir
+
+(58, 8, '2024-04-23', '10:00:00'),
+(59, 8, '2024-04-23', '15:00:00'),
+(60, 8, '2024-04-23', '20:00:00');
+
+-- Pour le deuxième jour (Mercredi 24 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(61, 7, '2024-04-24', '09:00:00'),
+(62, 7, '2024-04-24', '14:00:00'),
+(63, 7, '2024-04-24', '19:00:00'),
+
+(64, 8, '2024-04-24', '10:00:00'),
+(65, 8, '2024-04-24', '15:00:00'),
+(66, 8, '2024-04-24', '20:00:00');
+
+-- Pour le troisième jour (Jeudi 25 Avril 2024)
+INSERT INTO Horaires (HoraireID, FilmID, DateHoraire, HeureHoraire) VALUES
+(67, 7, '2024-04-25', '09:00:00'),
+(68, 7, '2024-04-25', '14:00:00'),
+(69, 7, '2024-04-25', '19:00:00'),
+
+(70, 8, '2024-04-25', '10:00:00'),
+(71, 8, '2024-04-25', '15:00:00'),
+(72, 8, '2024-04-25', '20:00:00');
+
+
+-- Remplissage de la table Clients :
+
+-- Pour les clients invités
+INSERT INTO Clients (ClientID, TypeDeClient) VALUES
+(1, 'Invité'),
+(2, 'Invité'),
+(3, 'Invité');
+
+-- Pour les clients membres
+INSERT INTO Clients (ClientID, TypeDeClient) VALUES
+(4, 'Membre'),
+(5, 'Membre'),
+(6, 'Membre');
+
+-- Remplissage de la table Reservations :
+
+-- Pour le client 1 (invité)
+INSERT INTO Reservations (ReservationID, FilmID, ClientID, NombreBillets, PrixTotal)
+VALUES
+(1,1,1,2,20.0);
+
+-- Pour le client 2 (invité)
+INSERT INTO Reservations (ReservationID, FilmID, ClientID, NombreBillets, PrixTotal)
+VALUES
+(2,3,2,1,10.0);
+
+-- Pour le client 3 (invité)
+INSERT INTO Reservations (ReservationID, FilmID, ClientID, NombreBillets, PrixTotal)
+VALUES
+(3,2,3,3,30.0);
+
+-- Pour le client 4 (membre, enfant)
+INSERT INTO Reservations (ReservationID, FilmID, ClientID, NombreBillets, PrixTotal)
+VALUES
+(4,5,4,1,5.0);
+
+-- Pour le client 5 (membre, régulier)
+INSERT INTO Reservations (ReservationID, FilmID, ClientID, NombreBillets, PrixTotal)
+VALUES
+(5,7,5,2,14.0);
+
+-- Pour le client 6 (membre, senior)
+INSERT INTO Reservations (ReservationID, FilmID, ClientID, NombreBillets, PrixTotal)
+VALUES
+(6,8,6,1,8.0);
+
+
+
+
+-- Remplissage de la table Membres :
+
+INSERT INTO Membres (MembreID, ClientID, TypeDeMembre, Email, MotDePasse)
+VALUES
+(1, 4, 'Enfant', 'membre1@gmail.com', 'motdepasse1'),
+(2, 5, 'Régulier', 'membre2@gmail.com', 'motdepasse2'),
+(3, 6, 'Senior', 'membre3@gmail.com', 'motdepasse3');
+
+-- Remplissage de la table Employes :
+
+INSERT INTO Employes (EmployeID, EmailEmploye, MotDePasse)
+VALUES
+(1, 'mounirbenyamina@edu.ece.fr', 'mdp1'),
+(2, 'darlish@edu.ece.fr', 'mdp2'),
+(3, 'leo@edu.ece.fr', 'mdp3');
+
+-- Remplissage de la table Reductions :
+
+INSERT INTO Reductions (ReductionID, TypeDeMembre, ValeurReduction)
+VALUES
+(1, 'Senior', 0.2),
+(2, 'Régulier', 0.3),
+(3, 'Enfant', 0.5);
+
+
