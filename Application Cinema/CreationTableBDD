@@ -1,0 +1,83 @@
+-- Table Films
+CREATE TABLE Films (
+    FilmID INT PRIMARY KEY, -- Identifiant unique pour chaque film
+    Titre VARCHAR(100) NOT NULL, -- Titre du film
+    Realisateur VARCHAR(100), -- Réalisateur du film
+    Synopsis TEXT, -- Synopsis du film
+    PrixTicket DECIMAL(5,2) NOT NULL, -- Prix du Ticket du film
+    Salle VARCHAR(50) NOT NULL, -- Information sur la salle du film
+    NotePresse DECIMAL(3,1), -- Note de la presse
+    MoyenneNotesMembres DECIMAL(3,1), -- Moyenne des notes des membres
+    MoyenneNotesEmployes DECIMAL(3,1), -- Moyenne des notes des employés
+    Poster VARCHAR(255) -- Chemin d'accès à l'image du poster
+);
+
+-- Table Horaires
+CREATE TABLE Horaires (
+    HoraireID INT PRIMARY KEY, -- Identifiant unique pour chaque horaire
+    FilmID INT, -- Identifiant du film (clé étrangère)
+    DateHoraire DATE NOT NULL, -- Date de la séance
+    HeureHoraire TIME NOT NULL, -- Heure de la séance
+    FOREIGN KEY (FilmID) REFERENCES Films(FilmID) -- Contrainte de clé étrangère
+);
+
+-- Table Clients
+CREATE TABLE Clients (
+    ClientID INT PRIMARY KEY, -- Identifiant unique pour chaque client
+    TypeDeClient ENUM('Invité', 'Membre') NOT NULL -- Type de client
+);
+
+-- Table Réservations
+CREATE TABLE Reservations (
+    ReservationID INT PRIMARY KEY, -- Identifiant unique pour chaque réservation
+    FilmID INT, -- Identifiant du film réservé (clé étrangère)
+    ClientID INT, -- Identifiant du client de la réservation (clé étrangère)
+    NombreBillets INT NOT NULL, -- Nombre de ticket réservés
+    PrixTotal DECIMAL(7,2) NOT NULL, -- Prix total de la réservation
+    FOREIGN KEY (FilmID) REFERENCES Films(FilmID), -- Contrainte de clé étrangère
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID) -- Contrainte de clé étrangère
+);
+
+-- Table Membres
+CREATE TABLE Membres (
+    MembreID INT PRIMARY KEY, -- Identifiant unique pour chaque membre
+    ClientID INT UNIQUE, -- Identifiant du client (clé étrangère)
+    TypeDeMembre ENUM('Régulier', 'Senior', 'Enfant') NOT NULL, -- Type de membre
+    Email VARCHAR(100) UNIQUE, -- Adresse e-mail du membre
+    MotDePasse VARCHAR(50), -- Mot de passe du membre
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID) -- Contrainte de clé étrangère
+);
+
+-- Table Employés
+CREATE TABLE Employes (
+    EmployeID INT PRIMARY KEY, -- Identifiant unique pour chaque employé
+    EmailEmployé VARCHAR(100) UNIQUE, -- Adresse e-mail de l'employé
+    MotDePasse VARCHAR(50) -- Mot de passe de l'employé
+);
+
+-- Table Réductions
+CREATE TABLE Reductions (
+    ReductionID INT PRIMARY KEY, -- Identifiant unique pour chaque réduction
+    TypeDeMembre ENUM('Régulier', 'Senior', 'Enfant') NOT NULL, -- Type de membre
+    ValeurReduction DECIMAL(5,2) NOT NULL -- Valeur de la réduction
+);
+
+-- Table NotesMembres
+CREATE TABLE NotesMembres (
+    NoteID INT PRIMARY KEY, -- Identifiant unique pour chaque note
+    FilmID INT, -- Identifiant du film (clé étrangère)
+    MembreID INT, -- Identifiant du membre (clé étrangère)
+    Note DECIMAL(3,2), -- Note du membre pour le film
+    FOREIGN KEY (FilmID) REFERENCES Films(FilmID), -- Contrainte de clé étrangère
+    FOREIGN KEY (MembreID) REFERENCES Membres(MembreID) -- Contrainte de clé étrangère
+);
+
+-- Table NotesEmployes
+CREATE TABLE NotesEmployes (
+    NoteID INT PRIMARY KEY, -- Identifiant unique pour chaque note
+    FilmID INT, -- Identifiant du film (clé étrangère)
+    EmployeID INT, -- Identifiant de l'employé (clé étrangère)
+    Note DECIMAL(3,2), -- Note de l'employé pour le film
+    FOREIGN KEY (FilmID) REFERENCES Films(FilmID), -- Contrainte de clé étrangère
+    FOREIGN KEY (EmployeID) REFERENCES Employes(EmployeID) -- Contrainte de clé étrangère
+);
